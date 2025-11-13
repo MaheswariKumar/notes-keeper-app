@@ -12,6 +12,7 @@ export default function Login() {
         email : "",
         password : ""
     })
+    const API_URL = process.env.REACT_APP_API_BASE_URL;
 
     const handleChange = (e) => {
         setFormData({...formdata, [e.target.name] : e.target.value});
@@ -19,7 +20,7 @@ export default function Login() {
 
     const handleLogin = async () => {
         try {
-            const rs = await axios.post(`http://localhost:5000/api/v1/auth/login`, formdata);
+            const rs = await axios.post(`${API_URL}/api/v1/auth/login`, formdata);
             localStorage.setItem("token", rs.data.token);
             console.log(rs.data.token);
             console.log(rs.data.userInfo);

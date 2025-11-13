@@ -4,11 +4,12 @@ import { UserConext } from "../context/userContext"
 
 export const useNotes = () => {
     const {setSavedNotes, setNote, note, setOpenEdit} = useContext(UserConext);
+    const API_URL = process.env.REACT_APP_API_BASE_URL;
 
         const handleNotes = async () => {
         try {
             const token = localStorage.getItem("token");
-            const rs = await axios.post(`http://localhost:5000/api/v1/createnotes`, {
+            const rs = await axios.post(`${API_URL}/api/v1/createnotes`, {
                 content : note
             } ,
                 {
@@ -28,7 +29,7 @@ export const useNotes = () => {
     const handleSavedNotes = async () => {
         try {
             const token = localStorage.getItem("token");
-            const rs = await axios.get("http://localhost:5000/api/v1/getsavednotes", 
+            const rs = await axios.get(`${API_URL}/api/v1/getsavednotes`, 
                 {
                     headers : {Authorization : `Bearer ${token}`}
                 }
@@ -47,7 +48,7 @@ export const useNotes = () => {
     const handleEditNotes = async (id) => {
         try {
             const token = localStorage.getItem("token");
-            const rs = await axios.patch(`http://localhost:5000/api/v1/editnotes/${id}`, {
+            const rs = await axios.patch(`${API_URL}/api/v1/editnotes/${id}`, {
                 content : note,
             }, {
                 headers : {Authorization : `Bearer ${token}`}
@@ -66,7 +67,7 @@ export const useNotes = () => {
     const handleDeleteNotes = async (id) => {
         try {
             const token = localStorage.getItem("token");
-            await axios.delete(`http://localhost:5000/api/v1/deletenotes/${id}`, {
+            await axios.delete(`${API_URL}/api/v1/deletenotes/${id}`, {
                 headers : {Authorization : `Bearer ${token}`}
             })
 
