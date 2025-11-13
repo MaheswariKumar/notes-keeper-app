@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { UserConext } from "../context/userContext";
 import { useState } from "react";
+import API_URL from "../config";
 
 
 export default function Login() {
@@ -12,7 +13,6 @@ export default function Login() {
         email : "",
         password : ""
     })
-    const API_URL = process.env.REACT_APP_API_BASE_URL;
 
     const handleChange = (e) => {
         setFormData({...formdata, [e.target.name] : e.target.value});

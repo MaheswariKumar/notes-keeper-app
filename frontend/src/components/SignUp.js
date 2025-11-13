@@ -1,6 +1,7 @@
 import { useState } from "react"
 import axios from "axios";
 import { useNavigate } from "react-router-dom"
+import API_URL from "../config";
 
 export default function SignUp() {
     const [formdata, setFormData] = useState({
@@ -9,7 +10,6 @@ export default function SignUp() {
         password : ""
     })
     const navigate = useNavigate();
-    const API_URL = process.env.REACT_APP_API_BASE_URL;
 
     const handleChange = (e) => {
         setFormData({...formdata, [e.target.name] : e.target.value})

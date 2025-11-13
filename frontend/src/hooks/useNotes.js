@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useContext } from "react"
 import { UserConext } from "../context/userContext"
+import API_URL from "../config";
 
 export const useNotes = () => {
     const {setSavedNotes, setNote, note, setOpenEdit} = useContext(UserConext);
-    const API_URL = process.env.REACT_APP_API_BASE_URL;
 
         const handleNotes = async () => {
         try {
