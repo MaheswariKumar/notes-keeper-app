@@ -22,7 +22,7 @@ export default function Login() {
         try {
             const rs = await axios.post(`${API_URL}/api/v1/auth/login`, formdata);
             localStorage.setItem("token", rs.data.token);
-            console.log(rs.data.token);
+            console.log(API_URL);
             console.log(rs.data.userInfo);
             setUser(rs.data.userInfo);
             navigate("/dashboard");
