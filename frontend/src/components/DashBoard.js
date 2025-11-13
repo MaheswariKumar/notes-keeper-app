@@ -50,7 +50,7 @@ export default function DashBoard() {
                                 return (
                              <div key={idx} className="sav">
                                 <div className="time">
-                                    <nav>{user.userName}</nav>
+                                    <nav>{user?.userName}</nav>
                                     <div className="icons">
                                         <img onClick={() => hanldeEdit(note)} width="25" height="25" src="https://img.icons8.com/ios/50/create-new.png" alt="create-new"/>
                                         <img onClick={() => handleDeleteNotes(note._id)} width="25" height="25" src="https://img.icons8.com/ios-glyphs/30/filled-trash.png" alt="filled-trash"/>

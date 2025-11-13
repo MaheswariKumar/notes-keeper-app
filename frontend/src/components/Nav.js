@@ -13,8 +13,8 @@ export default function Nav() {
                 </div>
                 <div className="pro">
                     <div className="profIcon">
-                        <nav>{user.userName.charAt(0)}</nav>
-                        <nav>{user.userName}</nav>
+                        <nav>{user?.userName.charAt(0)}</nav>
+                        <nav>{user?.userName}</nav>
                     </div>
                     <nav onClick={() => navigate("/")} className="logout">Logout</nav>
                 </div>
