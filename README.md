@@ -16,6 +16,13 @@ A full stack notes management application built with **React.js**, **Node.js**, 
 # Clone the repository
 https://github.com/MaheswariKumar/notes-keeper-app.git
 
+# Install Dependencies
+cd backend
+npm install
+
+cd frontend
+npm install
+
 # Run Backend
 cd backend
 npm start
@@ -33,3 +40,4 @@ npm start
 Maheswari Kumar
 
 - LinkedIn - https://www.linkedin.com/in/maheswari5kumar
+- GitHub - https://github.com/MaheswariKumar
